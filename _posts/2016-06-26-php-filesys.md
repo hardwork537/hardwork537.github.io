@@ -49,7 +49,6 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
 ```
 
 - 查找指定行：
@@ -61,7 +60,6 @@ try {
 } catch (Exception $e) {
     echo $e->getMessage();
 }
-
 ```
 
 - 写入csv文件：
@@ -71,13 +69,10 @@ $list  = array (
     array( '123' ,  '456' ,  '7891' ),
     array( '"aaa"' ,  '"bbb"' )
 );
- 
 $file  = new  SplFileObject ( 'file.csv' ,  'w' );
- 
 foreach ( $list  as  $fields ) {
     $file -> fputcsv ( $fields );
 }
-
 ```
 
 
@@ -85,7 +80,6 @@ foreach ( $list  as  $fields ) {
 #
 **[fileSys.php]**
 ```
-
 <?php
 /**
  * 文件系统操作类
@@ -715,7 +709,6 @@ interface FileOperable {
 	
 }
 ?>
-
 ```
 **[demo]**
 ```
@@ -788,6 +781,4 @@ exit;
 $file = __DIR__.'/readtest.txt';
 $content = $fileSys->read(new File($file));
 echo $content;
-
-
 ```
