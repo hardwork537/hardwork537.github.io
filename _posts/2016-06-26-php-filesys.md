@@ -41,6 +41,7 @@ print_r(array(
 **SplFileObject继承SplFileInfo并实现RecursiveIterator , SeekableIterator接口 ，用于对文件遍历、查找、操作**
 
 - 遍历：
+
 ```
 try {
     foreach(new SplFileObject('foo-bar.txt') as $line) {
@@ -52,6 +53,7 @@ try {
 ```
 
 - 查找指定行：
+
 ```
 try {
     $file = new SplFileObject('foo-bar.txt');
@@ -92,9 +94,7 @@ class FileSystem {
      * @var FileSystem
      */
     private static $instance;
-    
     private function __construct() {}
-    
     /**
      * 获取单例
      * 
@@ -104,10 +104,8 @@ class FileSystem {
         if (null === self::$instance) {
             self::$instance = new self();
         }
-        
         return self::$instance;
     }
-
     /**
      * 读取文件内容
      * 
