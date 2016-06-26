@@ -7,6 +7,7 @@ description: PHP SPL中提供了SplFileInfo和SplFileObject两个类来处理文
 
 **PHP SPL中提供了[SplFileInfo](http://www.phpddt.com/manual/php/res/class.splfileinfo.html)和SplFileObject两个类来处理文件操作**
 
+
 **SplFileInfo用来获取文件详细信息**
 
 ```
