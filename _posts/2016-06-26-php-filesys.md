@@ -779,6 +779,7 @@ $res = $fileSys->write(new File($file), 'tonytest');
 var_dump($res);
 exit;
 
+
 //读取文件内容
 $file = __DIR__.'/readtest.txt';
 $content = $fileSys->read(new File($file));
