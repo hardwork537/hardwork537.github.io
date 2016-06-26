@@ -7,7 +7,6 @@ description: PHP SPL中提供了SplFileInfo和SplFileObject两个类来处理文
 
 **PHP SPL中提供了[SplFileInfo](http://www.phpddt.com/manual/php/res/class.splfileinfo.html)和SplFileObject两个类来处理文件操作**
 
-
 **SplFileInfo用来获取文件详细信息**
 
 ```
@@ -66,6 +65,7 @@ try {
 ```
 
 - 写入csv文件：
+
 ```
 $list  = array (
     array( 'aaa' ,  'bbb' ,  'ccc' ,  'dddd' ),
@@ -80,7 +80,7 @@ foreach ( $list  as  $fields ) {
 
 
 ###### 自己根据这些封装了一个文件操作的php类，可用于文件内容的读、写、文件的拷贝和移动、删除等……
-#
+
 **[fileSys.php]**
 
 ```
@@ -710,7 +710,9 @@ interface FileOperable {
 }
 ?>
 ```
+
 **[demo]**
+
 ```
 <?php
 
