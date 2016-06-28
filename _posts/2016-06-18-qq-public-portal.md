@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      QQ公众号产生的小感想
+title:      乱谈
 category: article
 tags: [article]
 description: 昨天一个同事的朋友打电话问我关于QQ公众号的一些问题
