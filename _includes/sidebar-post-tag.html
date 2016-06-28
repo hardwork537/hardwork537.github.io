@@ -4,7 +4,7 @@
         {% for category in site.categories %}
         <li class="list-group-item">
             {{ category | first }}
-            <span class="badge"><a href="/blog/{{ category }}">{{ category[1].size }}</a></span>
+            <span class="badge">{{ category[1].size }}</span>
         </li>
         {% endfor %}
     </ul>
