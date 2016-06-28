@@ -3,7 +3,7 @@ layout:     post
 title:      QQ公众号产生的小感想
 category: article
 tags: [article]
-description: 昨天一个同事的朋友打电话问我关于QQ公众号的一些问题……
+description: 昨天一个同事的朋友打电话问我关于QQ公众号的一些问题
 ---
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;昨天一个同事的朋友打电话问我关于QQ公众号的一些问题，作为一个“有责任心”的员工，跟他聊了好一会。通过跟他的交流，自己也有了一些感想。
