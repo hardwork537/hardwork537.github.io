@@ -1,17 +1,24 @@
 ---
 layout: default
+css: ['sidebar-post-nav.css']
 ---
+{% include jumbotron.html %}
+<article class="post container" itemscope itemtype="http://schema.org/BlogPosting">
 
-<body class="body-post">
-  <div class="post-wrapper">
-    <h1 class="post-title"><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></h1>
-    <p class="post-date">{{ page.date|date:"%Y-%m-%d" }}</p>
-    {{ content }}
-    {% include disqus.html %}
-  </div>
+    <div class="row">
 
-  {% include about.html %}
+        <div class="col-md-8 markdown-body">
 
-  <script src="/js/jquery-1.7.1.min.js" type="text/javascript"></script>
-  <script src="/js/post.js" type="text/javascript"></script>
-</body>
+            {{ content }}
+
+            <!-- Comments -->
+            {% include disqus-comments.html %}
+        </div>
+
+        <div class="col-md-4">
+            {% include sidebar-post-nav.html %}
+        </div>
+
+    </div>
+
+</article>
