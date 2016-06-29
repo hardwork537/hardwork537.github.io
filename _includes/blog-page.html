@@ -7,12 +7,10 @@
         }
     })(jQuery);
 
-    var dataStr = '{ {% for cat in site.categories %}{% if cat[0] != site.categories.first[0] %},{% endif %}"{{ cat[0] }}":[{% for post in cat[1] %}{% if post != cat[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%d/%m/%Y"}}"}{% endfor %}]{% endfor %} }';
+    var dataStr = '{ {% for cat in site.categories %}{% if cat[0] != site.categories.first[0] %},{% endif %}"{{ cat[0] }}":[{% for post in cat[1] %}{% if post != cat[1].first %},{% endif %}{"url":"{{post.url}}", "title":"{{post.title}}", "date":"{{post.date | date:"%Y-%m-%d"}}"}{% endfor %}]{% endfor %} }';
     var data = JSON.parse(dataStr);
     var curCat = $.getUrlParam('cat');
     var articleList = [];
-    console.log(data);
-    
     
     if(data[curCat]) {
     	articleList = data[curCat];
@@ -23,7 +21,22 @@
     	}
     }
     
-    console.log(articleList);
+    var html = '';
+    for(var i = 0; i < articleList.length; i++)
+    {
+    	var article = articleList[i];
+    	html += '
+    	    <li class="posts-list-item">
+                <div class="posts-content">
+                    <span class="posts-list-meta">' + article.date + '</span>
+                    <a class="posts-list-name bubble-float-left" href="' + article.url + '">' + article.title + '</a>
+                    <span class='circle'></span>
+                </div>
+            </li>
+    	';
+    }
+    
+    console.log(html);
 </script>
 
 <div class="row">
