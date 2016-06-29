@@ -1,7 +1,14 @@
 <script>
-    var curTag = $.query.get("cat"),
-    alert(curTag);
-    //archieves = data[curTag];
+    (function ($) {
+        $.getUrlParam = function (name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+    })(jQuery);
+
+    var catName = $.getUrlParam('cat');
+    alert(catName);
 </script>
 
 <div class="row">
