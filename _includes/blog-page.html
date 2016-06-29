@@ -25,17 +25,15 @@
     for(var i = 0; i < articleList.length; i++)
     {
     	var article = articleList[i];
-    	html += article.title;
-    	/*
-    	html += '
-    	    <li class="posts-list-item">
-                <div class="posts-content">
-                    <span class="posts-list-meta">' + article.date + '</span>
-                    <a class="posts-list-name bubble-float-left" href="' + article.url + '">' + article.title + '</a>
-                    <span class="circle"></span>
-                </div>
-            </li>
-    	';*/
+    	//html += article.title;
+    	
+    	html += '<li class="posts-list-item">';
+	    html += '	<div class="posts-content">';
+	    html += '		<span class="posts-list-meta">' + article.date + '</span>';
+	    html += '		<a class="posts-list-name bubble-float-left" href="' + article.url + '">' + article.title + '</a>';
+	    html += '       <span class="circle"></span>';
+	    html += '    </div>';
+	    html += '</li>';
     }
     
     console.log(html);
