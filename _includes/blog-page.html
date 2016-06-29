@@ -36,7 +36,7 @@
 	    html += '</li>';
     }
     
-    console.log(html);
+    $("#posts-list").append(html);
 </script>
 
 <div class="row">
@@ -55,7 +55,7 @@
             </li>
             {% endfor %}
         </ul>
-
+	
         <!-- Pagination -->
         {% include pagination.html %}
 
