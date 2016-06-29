@@ -11,6 +11,8 @@
     var data = JSON.parse(dataStr),
     var curCat = $.getUrlParam('cat');
     var articleList = [];
+    console.log(data);
+    
     
     if(data[curCat]) {
     	articleList = data[curCat];
