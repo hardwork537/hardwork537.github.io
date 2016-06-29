@@ -3,12 +3,11 @@
         $.getUrlParam = function (name) {
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
             var r = window.location.search.substr(1).match(reg);
-            if (r != null) return unescape(r[2]); return null;
+            if (r != null) return unescape(r[2]); return '';
         }
     })(jQuery);
 
     var catName = $.getUrlParam('cat');
-    alert(catName);
 </script>
 
 <div class="row">
@@ -21,7 +20,7 @@
             <li class="posts-list-item">
                 <div class="posts-content">
                     <span class="posts-list-meta">{{ post.date | date: "%Y-%m-%d" }}</span>
-                    <a class="posts-list-name bubble-float-left" href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+                    <a class="posts-list-name bubble-float-left" href="{{ site.url }}{{ post.url }}">a{{ catName }}{{ post.title }}</a>
                     <span class='circle'></span>
                 </div>
             </li>
