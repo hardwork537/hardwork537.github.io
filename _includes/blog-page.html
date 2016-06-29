@@ -4,6 +4,7 @@
 
         <!-- Blog list -->
         <ul id="posts-list">
+            <!--
             {% for post in site.posts %}
             <li class="posts-list-item">
                 <div class="posts-content">
@@ -12,7 +13,7 @@
                     <span class='circle'></span>
                 </div>
             </li>
-            {% endfor %}
+            {% endfor %}-->
         </ul>
 	
         <!-- Pagination -->
@@ -50,7 +51,7 @@
     }
     
     var html = '';
-    for(var i = 0; i < articleList.length; i++)
+    for(var i = articleList.length - 1; i >= 0; i--)
     {
     	var article = articleList[i];
     	//html += article.title;
@@ -63,8 +64,7 @@
 	    html += '    </div>';
 	    html += '</li>';
     }
-    console.log(html);
-    $("#posts-list").append(html);
+    $("#posts-list").html(html);
 
     $(document).ready(function(){
 
