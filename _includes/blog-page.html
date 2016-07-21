@@ -46,9 +46,12 @@
     	articleList.reverse();
     	$(".btn-group").hide();
     } else {
+    	var tmpData;
     	for(var catName in data)
-    	{
-    	    articleList = articleList.concat(data[catName]);
+    	{	
+    		tmpData = data[catName];
+    		tmpData.reverse();
+    	    articleList = articleList.concat(tmpData);
     	}
     }
     
