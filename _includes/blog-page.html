@@ -43,6 +43,7 @@
     
     if(data[curCat]) {
     	articleList = data[curCat];
+    	articleList.reverse();
     	$(".btn-group").hide();
     } else {
     	for(var catName in data)
