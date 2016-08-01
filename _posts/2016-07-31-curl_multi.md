@@ -14,9 +14,9 @@ description: curl_multi 和 通过for循环进行curl是两种不同方式，但
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因为它是模拟浏览器，因此它同样支持多种协议：FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 以及 LDAP等协议都可以很好的支持，包括一些：HTTPS认证，HTTP POST方法，HTTP PUT方法，FTP上传，keyberos认证，HTTP上传，代理服务器，cookies，用户名/密码认证，下载文件断点续传，上传文件断点续传，http代理服务器管道，甚至它还支持IPv6，scoket5代理服务器，通过http代理服务器上传文件到FTP服务器等等。
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** 这就是我们为什么要使用curl的原因！**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**这就是我们为什么要使用curl的原因！**
 
-使用curl完成简单的请求主要分为以下四步：
+【使用curl完成简单的请求主要分为以下四步：】
 
 1. 初始化，创建一个新cURL资源
 2. 设置URL和相应的选项
