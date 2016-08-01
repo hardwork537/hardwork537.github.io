@@ -8,7 +8,7 @@ description: curl_multi 和 通过for循环进行curl是两种不同方式，但
 
 ## 什么是curl
 
-**我们在平时开发过程中，会经常使用curl来抓取数据，但是curl到底是什么呢？我们为什么要使用curl呢？**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们在平时开发过程中，会经常使用curl来抓取数据，但是curl到底是什么呢？我们为什么要使用curl呢？
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curl是利用URL语法在命令行方式下工作的开源文件传输工具,使用URL的语法模拟浏览器来传输数据。
 
