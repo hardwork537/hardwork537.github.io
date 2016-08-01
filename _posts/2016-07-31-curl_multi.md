@@ -10,11 +10,11 @@ description: curl_multi 和 通过for循环进行curl是两种不同方式，但
 
 **我们在平时开发过程中，会经常使用curl来抓取数据，但是curl到底是什么呢？我们为什么要使用curl呢？**
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;curl是利用URL语法在命令行方式下工作的开源文件传输工具,使用URL的语法模拟浏览器来传输数据。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curl是利用URL语法在命令行方式下工作的开源文件传输工具,使用URL的语法模拟浏览器来传输数据。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;因为它是模拟浏览器，因此它同样支持多种协议：FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 以及 LDAP等协议都可以很好的支持，包括一些：HTTPS认证，HTTP POST方法，HTTP PUT方法，FTP上传，keyberos认证，HTTP上传，代理服务器，cookies，用户名/密码认证，下载文件断点续传，上传文件断点续传，http代理服务器管道，甚至它还支持IPv6，scoket5代理服务器，通过http代理服务器上传文件到FTP服务器等等。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;因为它是模拟浏览器，因此它同样支持多种协议：FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 以及 LDAP等协议都可以很好的支持，包括一些：HTTPS认证，HTTP POST方法，HTTP PUT方法，FTP上传，keyberos认证，HTTP上传，代理服务器，cookies，用户名/密码认证，下载文件断点续传，上传文件断点续传，http代理服务器管道，甚至它还支持IPv6，scoket5代理服务器，通过http代理服务器上传文件到FTP服务器等等。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;** 这就是我们为什么要使用curl的原因！**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;** 这就是我们为什么要使用curl的原因！**
 
 使用curl完成简单的请求主要分为以下四步：
 
@@ -23,21 +23,21 @@ description: curl_multi 和 通过for循环进行curl是两种不同方式，但
 3. 抓取URL并把它传递给浏览器
 4. 关闭cURL资源，并且释放系统资源
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;我们来采集一个页面，通常情况下，我们会使用file_get_contents()函数来获取：
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;但是我们会发现，我们没有办法有效地进行错误处理，更重要的是我们没有办法完成一些高难度的任务：处理cookies，验证，表单提交，文件上传等等。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我们来采集一个页面，通常情况下，我们会使用file_get_contents()函数来获取：
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但是我们会发现，我们没有办法有效地进行错误处理，更重要的是我们没有办法完成一些高难度的任务：处理cookies，验证，表单提交，文件上传等等。
 
 
 ## 什么是curl_multi
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;大家都知道php没有多线程，这也是弱于java等高级语言的表现之一。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;大家都知道php没有多线程，这也是弱于java等高级语言的表现之一。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;但有时候我们还是需要php同时做一些操作，这时候我们可以借助服务器的多程线来实现。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;但有时候我们还是需要php同时做一些操作，这时候我们可以借助服务器的多程线来实现。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;自然就会想起 curl_multi_* 系列函数，这些函数说明并不详细，例子也很少。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;自然就会想起 curl_multi_* 系列函数，这些函数说明并不详细，例子也很少。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;一般来说，想到要用这些函数时，目的显然应该是要同时请求多个url，而不是一个一个依次请求。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;一般来说，想到要用这些函数时，目的显然应该是要同时请求多个url，而不是一个一个依次请求。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;步骤总结如下：
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;步骤总结如下：
 1. 调用curl_multi_init
 2. 循环调用curl_multi_add_handle(这一步需要注意的是，curl_multi_add_handle的第二个参数是由curl_init而来的子handle)
 3. 持续调用curl_multi_exec
@@ -48,11 +48,11 @@ description: curl_multi 和 通过for循环进行curl是两种不同方式，但
 
 ## curl VS curl_multi
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;curl_init()处理事物是单线程模式，如果需要对事务处理走多线程模式，那么php里提供了一个函数curl_multi_init()给我们，这就是多线程模式处理事务的函数。
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;curl_init()处理事物是单线程模式，如果需要对事务处理走多线程模式，那么php里提供了一个函数curl_multi_init()给我们，这就是多线程模式处理事务的函数。
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;那么通过for循环调用curl 和 调用curl_multi多现成，两种方式的效率如何呢？
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;那么通过for循环调用curl 和 调用curl_multi多现成，两种方式的效率如何呢？
 
-&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;&nsbsp;我用抓取网站图片作为例子：先抓取一个网站的html，然后通过正则匹配出html中的所有图片，通过两种方式把所有图片都抓取下来，代码如下：
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;我用抓取网站图片作为例子：先抓取一个网站的html，然后通过正则匹配出html中的所有图片，通过两种方式把所有图片都抓取下来，代码如下：
 
 ### 代码
 
@@ -233,15 +233,15 @@ echo "Time: $time seconds<br />";
 
 每个脚本跑50次，拉取所有图片，测试数据如下
 
-1. 图片个数:
+- 图片个数:
 
 ![image num](/images/curl/pic_num.png)
 
-2. 图片大小
+- 图片大小
  
 ![image num](/images/curl/total.png)
 
-3. 两种方式的耗时
+- 两种方式的耗时
 
 ![image num](/images/curl/for_cost.png) ![image num](/images/curl/multi_cost.png)
 
