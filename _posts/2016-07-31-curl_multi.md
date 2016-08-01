@@ -6,21 +6,15 @@ tags: [php]
 description: curl_multi 和 通过for循环进行curl是两种不同方式，但两者效率方面有什么区别呢？
 ---
 
-### 什么是curl
+## 什么是curl
 
-**我们在平时开发过程中，会经常使用curl来抓取数据，但是curl到底是什么呢？我们为什么要使用curl**
+**我们在平时开发过程中，会经常使用curl来抓取数据，但是curl到底是什么呢？我们为什么要使用curl呢？**
 
 curl是利用URL语法在命令行方式下工作的开源文件传输工具,使用URL的语法模拟浏览器来传输数据。
 
-因为它是模拟浏览器，因此它同样支持多种协议：
+因为它是模拟浏览器，因此它同样支持多种协议：FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 以及 LDAP等协议都可以很好的支持，包括一些：HTTPS认证，HTTP POST方法，HTTP PUT方法，FTP上传，keyberos认证，HTTP上传，代理服务器，cookies，用户名/密码认证，
 
-FTP, FTPS, HTTP, HTTPS, GOPHER, TELNET, DICT, FILE 以及 LDAP等协议都可以很好的支持，包括一些：
-
-HTTPS认证，HTTP POST方法，HTTP PUT方法，FTP上传，keyberos认证，HTTP上传，代理服务器，cookies，用户名/密码认证，
-
-下载文件断点续传，上传文件断点续传，http代理服务器管道，甚至它还支持IPv6，scoket5代理服务器，通过http代理服务器上传文件
-
-到FTP服务器等等。
+下载文件断点续传，上传文件断点续传，http代理服务器管道，甚至它还支持IPv6，scoket5代理服务器，通过http代理服务器上传文件到FTP服务器等等。
 
 这就是我们为什么要使用curl的原因！
 
@@ -36,7 +30,7 @@ HTTPS认证，HTTP POST方法，HTTP PUT方法，FTP上传，keyberos认证，HT
 如：处理cookies，验证，表单提交，文件上传等等。
 
 
-### 什么是curl_multi
+## 什么是curl_multi
 
 大家都知道php没有多线程，这也是弱于java等高级语言的表现之一。
 
@@ -63,7 +57,7 @@ curl_init()处理事物是单线程模式，如果需要对事务处理走多线
 
 我用抓取网站图片作为例子：先抓取一个网站的html，然后通过正则匹配出html中的所有图片，通过两种方式把所有图片都抓取下来，代码如下：
 
-#### 代码
+### 代码
 
 curl:
 
@@ -238,7 +232,7 @@ echo "Time: $time seconds<br />";
 ```
 
 
-#### 结论
+### 结论
 
 每个脚本跑50次，拉取所有图片，测试数据如下
 
