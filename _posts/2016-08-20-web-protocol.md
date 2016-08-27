@@ -35,7 +35,7 @@ description: 作为一个经常和web打交道的程序员，了解这些协议�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**建立连接**（Initial connection）：HTTP 是基于 TCP 协议的，浏览器最快也要在第三次握手时才能捎带 HTTP 请求报文，达到真正的建立连接，但是这些连接无法复用会导致每次请求都经历三次握手和慢启动。三次握手在高延迟的场景下影响较明显，慢启动则对文件类大请求影响较大。
 
-![connection](/images/http/connection.jpeg)
+![connection](/images/http/connection.JPEG)
 
 ## HTTP1.0和HTTP1.1的一些区别
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP1.0最早在网页中使用是在1996年，那个时候只是使用一些较为简单的网页上和网络请求上，而HTTP1.1则在1999年才开始广泛应用于现在的各大浏览器网络请求中，同时HTTP1.1也是当前使用最为广泛的HTTP协议。
@@ -52,13 +52,13 @@ description: 作为一个经常和web打交道的程序员，了解这些协议�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**长连接**，HTTP 1.1支持长连接（PersistentConnection）和请求的流水线（Pipelining）处理，在一个TCP连接上可以传送多个HTTP请求和响应，减少了建立和关闭连接的消耗和延迟，在HTTP1.1中默认开启Connection： keep-alive，一定程度上弥补了HTTP1.0每次请求都要创建连接的缺点。以下是常见的HTTP1.0：
 
-![header](/images/http/header.png)
+![header](/images/http/header.PNG)
 
-![console](/images/http/console.jpeg)
+![console](/images/http/console.JPEG)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;区别用一张图来体现：
 
-![diff](/images/http/diff.png)
+![diff](/images/http/diff.PNG)
 
 ## HTTP1.0和1.1现存的一些问题
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;上面提到过的，HTTP1.x在传输数据时，每次都需要重新建立连接，无疑增加了大量的延迟时间，特别是在移动端更为突出。
@@ -85,7 +85,7 @@ description: 作为一个经常和web打交道的程序员，了解这些协议�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTPS可以有效的防止运营商劫持，解决了防劫持的一个大问题。
 
-![https](/images/http/https.png)
+![https](/images/http/https.PNG)
 
 ## HTTPS改造
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果一个网站要全站由HTTP替换成HTTPS，可能需要关注以下几点：
@@ -113,13 +113,13 @@ description: 作为一个经常和web打交道的程序员，了解这些协议�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**服务端推送**（server push），采用了SPDY的网页，例如我的网页有一个sytle.css的请求，在客户端收到sytle.css数据的同时，服务端会将sytle.js的文件推送给客户端，当客户端再次尝试获取sytle.js时就可以直接从缓存中获取到，不用再发请求了。SPDY构成图：
 
-![spdy](/images/http/spdy.png)
+![spdy](/images/http/spdy.PNG)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPDY位于HTTP之下，TCP和SSL之上，这样可以轻松兼容老版本的HTTP协议(将HTTP1.x的内容封装成一种新的frame格式)，同时可以使用已有的SSL功能。
 
 **兼容性**
 
-![jianrong](/images/http/jianrong.jpeg)
+![jianrong](/images/http/jianrong.JPEG)
 
 ## HTTP2.0的前世今生
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;顾名思义有了HTTP1.x，那么HTTP2.0也就顺理成章的出现了。
@@ -135,19 +135,19 @@ description: 作为一个经常和web打交道的程序员，了解这些协议�
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**多路复用**（MultiPlexing），即连接共享，即每一个request都是是用作连接共享机制的。一个request对应一个id，这样一个连接上可以有多个request，每个连接的request可以随机的混杂在一起，接收方可以根据request的 id将request再归属到各自不同的服务端请求里面。多路复用原理图：
 
-![yuanli](/images/http/yuanli.jpeg)
+![yuanli](/images/http/yuanli.JPEG)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**header压缩**，如上文中所言，对前面提到过HTTP1.x的header带有大量信息，而且每次都要重复发送，HTTP2.0使用encoder来减少需要传输的header大小，通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**服务端推送**（server push），同SPDY一样，HTTP2.0也具有server push功能。目前，有大多数网站已经启用HTTP2.0，例如YouTuBe，淘宝网等网站，利用chrome控制台可以查看是否启用H2：
 
-![isopen](/images/http/isopen.jpeg)
+![isopen](/images/http/isopen.JPEG)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;更多关于HTTP2的问题可以参考：HTTP2奇妙日常（http://www.alloyteam.com/2015/03/http2-0-di-qi-miao-ri-chang/），以及HTTP2.0的官方网站。
 
 **关于HTTP2和HTTP1.x的区别大致可以看下图：**
 
-![http1.1_and_http2.0](/images/http/http1.1_and_http2.0.png)
+![http1.1_and_http2.0](/images/http/http1.1_and_http2.0.PNG)
 
 ## HTTP2.0的升级改造
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;对比HTTPS的升级改造，HTTP2.0或许会稍微简单一些，你可能需要关注以下问题：
