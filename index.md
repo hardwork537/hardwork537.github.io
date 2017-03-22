@@ -1,1 +1,1 @@
-{% include blog-page.html %}
+{% include index.html %}
