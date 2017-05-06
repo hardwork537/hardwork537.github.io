@@ -6,7 +6,7 @@ tags: [php]
 description: 一些魔术函数、常用函数
 ---
 
-### __invoke
+## __invoke
 PHP自从5.3版以来就新增了一个叫做__invoke的魔术方法，使用该方法就可以在创建实例后，直接调用对象
 例如：
 ```
@@ -14,22 +14,22 @@ $n = new testClass;
 $n();
 ```
 
-### __set($key, $value)
+## __set($key, $value)
 向一个难以访问的属性赋值的时候 __set() 方法被调用 
 难以访问包括：（1）私有属性，（2）没有初始化的属性
 
-### __get($key)
+## __get($key)
 从一个难以访问的属性读取数据的时候 __get() 方法被调用
 难以访问包括：（1）私有属性，（2）没有初始化的属性
 
-### __clone
+## __clone
 在clone $class时会被调用
 __clone()方法对一个对象实例进行的浅复制,对象内的基本数值类型进行的是传值复制，而对象内的对象型成员变量,如果不重写__clone方法,显式的clone这个对象成员变量的话,这个成员变量就是传引用复制,而不是生成一个新的对象
 
-### __call(string $function_name, array $arguments)
+## __call(string $function_name, array $arguments)
 该方法在调用的方法不存在时会自动调用
 
-### is_callable() && method_exists()
+## is_callable() && method_exists()
 -  bool is_callable ( mixed $var [, bool $syntax_only = false [, string &$callable_name ]] )
 其中，
 参数1 - 可以是一个函数名字符串，也可以是一个数组(第一个参数是类名，第二个是方法名)
