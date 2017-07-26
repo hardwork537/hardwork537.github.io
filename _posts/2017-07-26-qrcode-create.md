@@ -135,9 +135,11 @@ if ($filename === false) {
 ```
 
 ## 样例展示
-!(demo1)[/images/qrcode/qrcode1.png]
+![demo1](/images/qrcode/qrcode1.png)
 
-!(demo2)[/images/qrcode/qrcode2.png]
+![demo2](/images/qrcode/qrcode2.png)
+
 
 相关链接 : [二维码的生成原理](http://aibenlin.com/web/2017/03/22/qrcode.html)
+
 相关链接 : [php demo代码](https://github.com/hardwork537/phpqrcode)
