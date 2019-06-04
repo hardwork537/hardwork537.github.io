@@ -10,7 +10,9 @@ description: 学习golang有一年多时间了，平时也有很多业务场景�
 
 - http具体实现
 - 超时机制
+
 ### 1. http具体实现
+
 首先分析一下client的工作流程。 下面是一般我们进行一个请求时的代码事例：
 
 ```
@@ -508,7 +510,6 @@ func (b *Buffer) ReadFrom(r io.Reader) (n int64, err error) {
 如果有body，那么对body要做一些处理。最终返回给外部。
 
 ### 2. 超时机制
-
 
 Client端的超时设置，最简单的方式就是使用http.Client的 Timeout字段。 它的时间计算包括从连接(Dial)到读完response body。
 
