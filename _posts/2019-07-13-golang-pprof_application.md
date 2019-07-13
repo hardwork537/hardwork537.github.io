@@ -103,7 +103,7 @@ Showing top 20 nodes out of 31
 go tool pprof -png -output heap.png -inuse_space jdy_service_bin http://127.0.0.1:6060/debug/pprof/heap
 ```
 
-![pprof](/images/pprof_heap/pprof1.png)
+![pprof](/images/pprof_heap/pprof.png)
 
 从图中分析， Logger 相关的代码占用的内存都是比较大的，并且可能存在没有及时释放的问题。
 
