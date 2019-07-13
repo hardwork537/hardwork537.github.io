@@ -1,9 +1,9 @@
 ---
 layout:     post
-title:      记一次GO语言内存泄漏——pprof heap分析
+title:      深入理解 Go Slice
 category: golang
 tags: [golang]
-description: 最近用GO写了一个类似于数据采集汇总的程序，但是却发现了内存泄漏的情况
+description: 深入理解 Go Slice
 ---
 
 # 深入理解 Go Slice
