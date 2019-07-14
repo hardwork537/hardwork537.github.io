@@ -17,6 +17,7 @@ LevelDB是Google开源的持久化KV单机数据库，具有很高的随机写�
 根据[Leveldb官方网站](https://github.com/google/leveldb)的描述，LevelDB的特点和限制如下：
 
 ## 特点：
+
 1. key和value都是任意长度的字节数组；
 2. entry（即一条K-V记录）默认是按照key的字典顺序存储的，当然开发者也可以重载这个排序函数；
 3. 提供的基本操作接口：Put()、Delete()、Get()、Batch()；
@@ -27,6 +28,7 @@ LevelDB是Google开源的持久化KV单机数据库，具有很高的随机写�
 8. 可移植性；
 
 ## 限制：
+
 1. 非关系型数据模型（NoSQL），不支持sql语句，也不支持索引；
 2. 一次只允许一个进程访问一个特定的数据库；
 3. 没有内置的C/S架构，但开发者可以使用LevelDB库自己封装一个server；
