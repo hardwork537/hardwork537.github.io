@@ -6,13 +6,9 @@ tags: [leveldb]
 description: LevelDB是Google开源的持久化KV单机数据库，具有很高的随机写，顺序读/写性能，但是随机读的性能很一般，也就是说，LevelDB很适合应用在查询较少，而写很多的场景
 ---
 
-
 # LevelDB入门
 
-
 LevelDB是Google开源的持久化KV单机数据库，具有很高的随机写，顺序读/写性能，但是随机读的性能很一般，也就是说，LevelDB很适合应用在查询较少，而写很多的场景。LevelDB应用了LSM (Log Structured Merge) 策略，lsm_tree对索引变更进行延迟及批量处理，并通过一种类似于归并排序的方式高效地将更新迁移到磁盘，降低索引插入开销，关于LSM，本文在后面也会简单提及。
-
- 
 
 根据[Leveldb官方网站](https://github.com/google/leveldb)的描述，LevelDB的特点和限制如下：
 
@@ -32,8 +28,6 @@ LevelDB是Google开源的持久化KV单机数据库，具有很高的随机写�
 1. 非关系型数据模型（NoSQL），不支持sql语句，也不支持索引；
 2. 一次只允许一个进程访问一个特定的数据库；
 3. 没有内置的C/S架构，但开发者可以使用LevelDB库自己封装一个server；
-
- 
 
 ## python 版示例
 
@@ -105,12 +99,9 @@ SSTable中的某个文件属于特定层级，而且其存储的记录是key有�
 另外，在LevleDb的运行过程中，随着Compaction的进行，SSTable文件会发生变化，会有新的文件产生，老的文件被废弃，Manifest也会跟着反映这种变化，此时往往会新生成Manifest文件来记载这种变化，而Current则用来指出哪个Manifest文件才是我们关心的那个Manifest文件。
 
 
-
 # 读写数据
 
-
 ![4](/images/level_db/4.jpg)
-
 
 ## 写操作流程：
 
@@ -137,9 +128,7 @@ SSTable中的某个文件属于特定层级，而且其存储的记录是key有�
 举个例子：我们先往levelDb里面插入一条数据 {key="www.samecity.com"  value="我们"}，过了几天，samecity网站改名为：69同城，此时我们插入数据{key="www.samecity.com"  value="69同城"}，同样的key,不同的value；逻辑上理解好像levelDb中只有一个存储记录，即第二个记录，但是在levelDb中很可能存在两条记录，即上面的两个记录都在levelDb中存储了，此时如果用户查询key="www.samecity.com"，我们当然希望找到最新的更新记录，也就是第二个记录返回，因此，查找的顺序应该依照数据更新的新鲜度来，对于SSTable文件来说，如果同时在level L和Level L+1找到同一个key，level L的信息一定比level L+1的要新。
 
 
-
 # SSTable文件
-
 
 SST文件并不是平坦的结构，而是分层组织的，这也是LevelDB名称的来源。
 
@@ -203,9 +192,7 @@ Major compaction的过程如下：对多个文件采用多路归并排序的方�
 那么在major compaction过程中，判断一个KV记录是否抛弃的标准是什么呢？其中一个标准是：对于某个key来说，如果在小于L层中存在这个Key，那么这个KV在major compaction过程中可以抛掉。因为我们前面分析过，对于层级低于L的文件中如果存在同一Key的记录，那么说明对于Key来说，有更新鲜的Value存在，那么过去的Value就等于没有意义了，所以可以删除。
 
 
-
 # Cache
-
 
 前面讲过对于levelDb来说，读取操作如果没有在内存的memtable中找到记录，要多次进行磁盘访问操作。假设最优情况，即第一次就在level 0中最新的文件中找到了这个key，那么也需要读取2次磁盘，一次是将SSTable的文件中的index部分读入内存，这样根据这个index可以确定key是在哪个block中存储；第二次是读入这个block的内容，然后在内存中查找key对应的value。
 
@@ -224,7 +211,7 @@ Block Cache是为了加快这个过程的，其中的key是文件的cache_id加�
 
 如果levelDb发现这个block在block cache中，那么可以避免读取数据，直接在cache里的block内容里面查找key的value就行，如果没找到呢？那么读入block内容并把它插入block cache中。levelDb就是这样通过两个cache来加快读取速度的。从这里可以看出，如果读取的数据局部性比较好，也就是说要读的数据大部分在cache里面都能读到，那么读取效率应该还是很高的，而如果是对key进行顺序读取效率也应该不错，因为一次读入后可以多次被复用。但是如果是随机读取，您可以推断下其效率如何。
 
-# 五、版本控制
+# 版本控制
 
 在Leveldb中，Version就代表了一个版本，它包括当前磁盘及内存中的所有文件信息。在所有的version中，只有一个是CURRENT（当前版本），其它都是历史版本。
 
@@ -248,7 +235,6 @@ Leveldb的这种版本的控制，让我想到了双buffer切换，双buffer切�
 比如我们的服务器上有一个字典库，每天我们需要更新这个字典库，我们可以新开一个buffer，将新的字典库加载到这个新buffer中，等到加载完毕，将字典的指针指向新的字典库。
 
 Leveldb的version管理和双buffer切换类似，但是如果原version被某个iterator引用，那么这个version会一直保持，直到没有被任何一个iterator引用，此时就可以删除这个version。
-
  
 # 参考资料
 
