@@ -102,6 +102,7 @@ reomve <name>; 从进程组移除子进程，需要先stop。注意：移除后�
 
 正常执行： 每两秒会输出当前的时间
 
+
 ```
 package main
 
@@ -129,6 +130,7 @@ func main() {
 ```go-panic-work.go```
 
 非正常执行：每两秒会输出当前的时间，当执行到第10次时，触发panic
+
 
 ```
 package main
@@ -163,6 +165,7 @@ func main() {
 因为我们的配置文件都在 ```/usr/local/etc/supervisor.d/*.ini```
 首先创建目录 ```/usr/local/etc/supervisor.d```，然后在该目录下创建配置文件 ```go-work.ini```
 具体内容如下：
+
 ```
   1 [program:go-work] #程序的名字，在supervisor中可以用这个名字来管理该程序
   2 directory=~/code/test  #相当于在该目录下执行程序
@@ -177,11 +180,13 @@ func main() {
  11 stdout_logfile_maxbytes=300MB #指定日志文件最大字节数，默认为50MB，可以加KB、MB或GB等单位
  12 stdout_logfile_backups=3 #要保存的stdout_logfile备份的数量
 ```
+
 同样的方法创建 ```go-panic-work.go``` 的配置文件
 
 ### 加载
 
 通过命令```sudo /usr/local/Cellar/supervisor/4.2.2_1/bin/supervisorctl -c /usr/local/etc/supervisord.conf```进入命令行模式
+
 
 ```
 supervisor> reread
@@ -191,13 +196,16 @@ go-work: available
 
 通过 ```reread```命令 加载刚添加的配置文件，出现available提示时说明成功加载
 
+
 ```
 supervisor> update
 go-panic-work: added process group
 go-work: added process group
 ```
+
 通过 ```update```命令 把刚才两个项目添加到工作组中
 因为刚才设置了```autostart=true```，所以```update```会启动两个进程
+
 
 ```
 supervisor> status
@@ -280,6 +288,7 @@ panic: over
 ```tail -f /usr/local/var/log/supervisord.log```
 
 ### 解决方案
+
 
 ```
 //用root启动supervisord
