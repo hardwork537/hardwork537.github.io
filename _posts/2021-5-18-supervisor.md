@@ -3,7 +3,7 @@ layout:     post
 title:      supervisor
 category:   tool
 tags:       [supervisor]
-description: supervisor的安装与配置
+description: 进程托管工具supervisor的安装与配置
 ---
 
 最近在开发一个新服务，本打算用docker部署上去进行管理；不过在跟运维同学沟通后，因为一些特性，用不了docker，只能在想办法了。如果直接启动服务裸跑的话，挂了怎么办？需要找一个可以托管服务的工具，就想到了用supervisor来进行进程管理。由于平时主要使用Mac电脑来开发，所以分享下mac下supervisor相关知识
