@@ -106,7 +106,7 @@ MyType[T1 constraint1 | constraint2, T2 constraint3...] ...
 - MyType可以是函数名, 结构体名, 类型名…
 - T1, T2…是泛型名, 可以随便取
 - constraint的意思是约束, 也是泛型中最重要的概念, 接下来会详解constraint
-- 使用 | 可以分隔多个constraint, T满足其中之一即可(如T1可以是constraint1和constraint2中的任何一个)
+- 使用 &#124; 可以分隔多个constraint, T满足其中之一即可(如T1可以是constraint1和constraint2中的任何一个)
 
 
 ### Constraint(约束)是什么
@@ -559,6 +559,7 @@ $f64.4000000000000000 SRODATA size=8
 ## 参考
 
 [【Golang】泛型要来了吗？](https://zhuanlan.zhihu.com/p/411595941)
+
 [Go1.18版本泛型详解](https://blog.csdn.net/qq_52582768/article/details/121984157)
 
 
