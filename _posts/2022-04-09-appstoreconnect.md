@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      如何抓取appstoreconnect数据
-category:   go,ruby
+category:   [go,ruby]
 tags:       [spaceship,appstoreconnect]
 description: 本文主要介绍如何通过API方式拉取appstoreconnect的数据
 ---
@@ -48,38 +48,32 @@ Spaceship 非常强大，所有你在浏览器上对 Apple Developer Center 和 
 Overview of the used API endpoints
 
 - https://idmsa.apple.com:
-
-1. Used to authenticate to get a valid session
+  - Used to authenticate to get a valid session
 
 - https://developerservices2.apple.com:
-
-1. Get a list of all available provisioning profiles
-2. Register new devices
+  - Get a list of all available provisioning profiles
+  - Register new devices
 
 - https://developer.apple.com:
-
-1. List all devices, certificates, apps and app groups
-2. Create new certificates, provisioning profiles and apps
-3. Disable/enable services on apps and assign them to app groups
-4. Delete certificates and apps
-5. Repair provisioning profiles
-6. Download provisioning profiles
-7. Team selection
+  - List all devices, certificates, apps and app groups
+  - Create new certificates, provisioning profiles and apps
+  - Disable/enable services on apps and assign them to app groups
+  - Delete certificates and apps
+  - Repair provisioning profiles
+  - Download provisioning profiles
+  - Team selection
 
 - https://appstoreconnect.apple.com:
-
-1. Managing apps
-2. Managing beta testers
-3. Submitting updates to review
-4. Managing app metadata
+  - Managing apps
+  - Managing beta testers
+  - Submitting updates to review
+  - Managing app metadata
 
 - https://du-itc.appstoreconnect.apple.com:
-
-1. Upload icons, screenshots, trailers ...
+  - Upload icons, screenshots, trailers ...
 
 - https://is[1-9]-ssl.mzstatic.com:
-
-1. Download app screenshots from App Store Connect
+  - Download app screenshots from App Store Connect
 
 虽然它这么强大，但是也有一些缺点：
 
