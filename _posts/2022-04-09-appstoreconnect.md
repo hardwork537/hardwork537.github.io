@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      如何抓取appstoreconnect数据
-category:   [go,ruby]
+category:   [golang,ruby]
 tags:       [spaceship,appstoreconnect]
 description: 本文主要介绍如何通过API方式拉取appstoreconnect的数据
 ---
