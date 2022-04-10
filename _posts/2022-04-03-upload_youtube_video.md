@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      通过api上传youtube视频
-category:   go
+category:   golang
 tags:       [youtube video]
 description: 最近在做youtube视频的自动上传，从调研接口到demo完成也花了不少时间
 ---
