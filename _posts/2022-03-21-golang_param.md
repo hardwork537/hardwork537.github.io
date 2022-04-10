@@ -1,8 +1,8 @@
 ---
 layout:     post
 title:      Go函数参数是值传递还是引用传递？ 
-category:   go
-tags:       [go]
+category:   golang
+tags:       [golang]
 description: 在 Go 语言中，函数的参数传递只有值传递，而且传递的实参都是原始数据的一份拷贝；不过这里的拷贝是浅拷贝，而不是深拷贝
 ---
 
