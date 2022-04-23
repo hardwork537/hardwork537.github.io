@@ -134,7 +134,7 @@ from student_score
 
 ![3](/images/sql_window_func/3.jpg)
 
-### 例子 2:
+例子 2:
 
 按照班级分组，然后根据分数对成绩进行累计求和
 
