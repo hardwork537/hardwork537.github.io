@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      LevelDB详解
+title:      LevelDB入门
 category: nosql
 tags: [leveldb]
 description: LevelDB是Google开源的持久化KV单机数据库，具有很高的随机写，顺序读/写性能，但是随机读的性能很一般，也就是说，LevelDB很适合应用在查询较少，而写很多的场景
