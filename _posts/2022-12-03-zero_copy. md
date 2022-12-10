@@ -1,5 +1,3 @@
-## @Overridepublic long transferFrom(FileChannel fileChannel, long position, long count) throws IOException { return fileChannel.transferTo(position, count, socketChannel);}
-
 layout: post
 title: 8 张图，就可以搞懂「零拷贝」了
 category: [linux]
